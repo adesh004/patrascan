@@ -237,10 +237,10 @@ section { padding: 110px 0; position: relative; }
 .tile .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .tile .tags span { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--text-2); }
 .span-2 { grid-column: span 2; } .span-3 { grid-column: span 3; } .span-4 { grid-column: span 4; }
-.tile.feature-big { display: grid; grid-template-columns: 1fr 190px; gap: 28px; align-items: center; }
-.tile.feature-big img { width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 18px; border: 1px solid var(--line-2); box-shadow: 0 20px 40px -20px #000; }
+.tile.feature-big { display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: center; }
+.tile.feature-big > img { width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 18px; border: 1px solid var(--line-2); box-shadow: 0 20px 40px -20px #000; }
 @media (max-width: 960px) { .bento { grid-template-columns: repeat(2, 1fr); } .span-2, .span-3, .span-4 { grid-column: span 2; } .tile.span-2.half { grid-column: span 1; } }
-@media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .span-2, .span-3, .span-4, .tile.span-2.half { grid-column: span 1; } .tile.feature-big { grid-template-columns: 1fr; } .tile.feature-big img { max-width: 220px; height: 260px; } }
+@media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .span-2, .span-3, .span-4, .tile.span-2.half { grid-column: span 1; } .tile.feature-big { grid-template-columns: 1fr; } .tile.feature-big > img { max-width: 220px; height: 260px; } }
 
 /* Hues */
 .h-teal { --tint: rgba(20,194,161,.14); --ink: #5eead0; --glow: rgba(20,194,161,.18); }
@@ -255,7 +255,7 @@ section { padding: 110px 0; position: relative; }
 .gallery::-webkit-scrollbar { display: none; }
 .shot { flex: none; width: 250px; scroll-snap-align: center; text-align: center; }
 .shot .frame { border-radius: 30px; padding: 8px; background: linear-gradient(145deg, #253041, #0d131c); border: 1px solid var(--line-2); box-shadow: 0 30px 60px -30px #000; }
-.shot img { border-radius: 23px; aspect-ratio: 9/19; object-fit: cover; object-position: top; width: 100%; }
+.shot .frame img { border-radius: 23px; aspect-ratio: 9/19; object-fit: cover; object-position: top; width: 100%; }
 .shot h3 { font-size: 15px; margin-top: 16px; }
 .shot p { margin: 4px 0 0; font-size: 13.5px; color: var(--text-3); }
 .gallery-wrap { position: relative; }
@@ -386,3 +386,82 @@ svg.i { width: 20px; height: 20px; flex: none; display: inline-block; vertical-a
 .round svg.i { width: 19px; height: 19px; }
 .yes { display: inline-flex; align-items: center; gap: 8px; }
 .yes svg.tick { width: 16px; height: 16px; padding: 2px; border-radius: 50%; background: rgba(20,194,161,.16); stroke-width: 2.5; }
+
+/* ===== Realistic phone frame =====
+   Everything scales from --w (device width): 1em = --w / 300.
+   Metal rim → black bezel → screen with status bar, punch-hole camera,
+   app screenshot and gesture bar; side buttons on the right edge. */
+.device { --w: 300px; width: var(--w); font-size: calc(var(--w) / 300); position: relative; flex: none; }
+.device-rim {
+  position: relative; padding: 3.2em; border-radius: 46em;
+  background:
+    linear-gradient(145deg, #5b6575 0%, #2a313c 18%, #11151b 45%, #2c333e 72%, #6a7484 100%);
+  box-shadow:
+    0 40em 80em -24em rgba(0,0,0,.85),
+    0 18em 40em -18em rgba(0,0,0,.7),
+    inset 0 0 0 0.8em rgba(255,255,255,.14),
+    inset 0 1.4em 1.4em -1em rgba(255,255,255,.18);
+}
+.device-bezel { padding: 6.5em; border-radius: 43em; background: #030405; box-shadow: inset 0 0 0 0.6em #1a1f26; }
+.device-screen {
+  position: relative; display: flex; flex-direction: column; overflow: hidden;
+  border-radius: 36.5em; background: #0f141b; isolation: isolate;
+}
+.device-screen > img { width: 100%; height: auto; display: block; }
+/* glass reflection */
+.device-screen::after {
+  content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: linear-gradient(118deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.03) 28%, transparent 42%);
+}
+.device-status {
+  height: 27em; flex: none; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22em 0 24em; background: #0f141b; color: #f3f6f9;
+}
+.device-status > span { font: 600 11.5em/1 var(--font); letter-spacing: .01em; }
+.device-status .sb { display: flex; align-items: center; gap: .35em; }
+.device-status svg { height: 1em; width: auto; fill: currentColor; }
+.device-punch {
+  position: absolute; z-index: 2; top: 8.5em; left: 50%; width: 11em; height: 11em; margin-left: -5.5em; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #2d3a52 0 1.4em, #0a0d12 2.4em, #000 100%);
+  box-shadow: 0 0 0 1.2em #000, inset 0 0 0 .5em rgba(255,255,255,.05);
+}
+.device-gesture {
+  height: 17em; flex: none; display: grid; place-items: center; background: #161c24;
+}
+.device-gesture::before { content: ""; width: 96em; height: 4em; border-radius: 3em; background: rgba(255,255,255,.62); }
+.device-btn {
+  position: absolute; right: -1.6em; width: 2.6em; border-radius: 0 1.6em 1.6em 0;
+  background: linear-gradient(90deg, #1b2028, #6b7585 55%, #2a313b);
+  box-shadow: 0.4em 0 0.8em rgba(0,0,0,.5);
+}
+.device-btn.power { top: 118em; height: 46em; }
+.device-btn.volume { top: 186em; height: 86em; }
+/* optional live scan line (hero) */
+.device-scan { position: absolute; left: 0; right: 0; height: 90em; top: -90em; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(20,194,161,.26) 80%, rgba(94,234,208,.9) 99%, transparent);
+  animation: devscan 4.2s cubic-bezier(.45,0,.55,1) infinite; }
+@keyframes devscan { 0% { top: -90em; } 55% { top: 100%; } 100% { top: 100%; } }
+
+/* Hero placement: tilted like a product shot */
+.stage .device { transform: rotateY(-14deg) rotateX(6deg) rotateZ(1deg); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.stage:hover .device { transform: rotateY(-6deg) rotateX(3deg); }
+@media (max-width: 520px) {
+  .stage .device { --w: 240px; }
+  .chip.c2 { display: none; }
+  .chip { font-size: 12.5px; padding: 8px 12px; }
+  .chip.c1 { top: 4%; left: 0; } .chip.c3 { bottom: 6%; left: 0; }
+}
+
+/* Feature tile: phone peeking up from the bottom of the card */
+.tile.feature-big .peek { align-self: stretch; display: flex; justify-content: center; margin: -26px 0 -26px; padding-top: 26px; height: calc(100% + 52px); max-height: 380px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+@media (max-width: 560px) { .tile.feature-big .peek { margin: 0 0 -26px; max-height: 300px; } }
+
+/* Gallery */
+.shot .device { --w: 230px; margin: 0 auto; }
+.shot { width: 250px; }
+
+/* Docs */
+.docs-device { float: right; margin: 4px 0 16px 28px; }
+.docs-device .device { --w: 190px; }
+@media (max-width: 900px) { .docs-device { float: none; margin: 16px 0; } }
