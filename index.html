@@ -3,47 +3,383 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PatraScan: PDF Scanner &amp; Vault</title>
-<meta name="description" content="Scan, sign and share ID documents. Encrypted, offline, Hindi and English. No ads.">
-<link rel="icon" href="icon-512.png">
-<style>
-  :root { --fg:#1b1f24; --muted:#5b6470; --accent:#1b4f8c; --bg:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --fg:#e8eaed; --muted:#a6adb7; --accent:#9cc2ff; --bg:#121417; } }
-  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  header { display:flex; gap:16px; align-items:center; }
-  header img { width:72px; height:72px; border-radius:16px; }
-  h1 { color: var(--accent); margin: 0; }
-  .muted { color: var(--muted); }
-  a { color: var(--accent); }
-  li { margin: 6px 0; }
-</style>
+<title>PatraScan — PDF Scanner &amp; Vault for your important documents</title>
+<meta name="description" content="Scan, protect and share Aadhaar, PAN, passport, marksheets and any PDF. Encrypted on your phone, works offline, Hindi & English, no ads, no account.">
+<meta name="theme-color" content="#070c14">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta property="og:title" content="PatraScan — PDF Scanner & Vault">
+<meta property="og:description" content="Your documents. Scanned, encrypted, ready to share. Offline, Hindi & English, no ads.">
+<meta property="og:image" content="https://adesh004.github.io/patrascan/assets/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"PatraScan: PDF Scanner & Vault","operatingSystem":"Android 7.0+","applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"publisher":{"@type":"Organization","name":"TechCoderHub"},"url":"https://adesh004.github.io/patrascan/"}
+</script>
 </head>
 <body>
-<main>
-<header>
-  <img src="icon-512.png" alt="PatraScan icon">
-  <div>
-    <h1>PatraScan</h1>
-    <div class="muted">PDF Scanner &amp; Vault for Android · by TechCoderHub</div>
+<div class="ambient" aria-hidden="true"></div>
+
+<!--
+  Install links. While PatraScan is in closed testing the Play page only works
+  for people who joined the test, so "Join early access" is the main action.
+  At public launch: point the primary buttons at PLAY and drop the tester note.
+    JOIN = https://play.google.com/apps/testing/app.patrascan
+    PLAY = https://play.google.com/store/apps/details?id=app.patrascan
+-->
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.png" alt="" width="32" height="32">PatraScan</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#privacy">Privacy</a>
+      <a href="docs.html">Docs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="https://play.google.com/apps/testing/app.patrascan">Get the app</a>
   </div>
 </header>
 
-<p>PatraScan keeps your important documents — Aadhaar, PAN, passport,
-driving licence, marksheets, passport photos and any PDF — safe on your
-phone and ready to share in seconds. Everything is encrypted, works offline,
-and there are no ads and no account.</p>
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="status-pill"><span class="dot"></span><b>Early access</b> now open on Google Play</span>
+        <h1><span class="grad">Your documents.</span><br>Scanned. Encrypted.<br>Ready in seconds.</h1>
+        <p class="lead">PatraScan keeps Aadhaar, PAN, passport, marksheets and every PDF safe on your phone — and turns them into exactly what forms, banks and offices ask for. Offline, in Hindi and English, with no ads and no account.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://play.google.com/apps/testing/app.patrascan">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1Zm11 8.5 2.6-2.6 3.1 1.8c1 .6 1 1.8 0 2.4l-3.1 1.8-2.6-2.6-1-.8Zm-1 1.2 2.6 2.6L5.3 20.8 13.6 12ZM5.3 3.2l10.9 6.2L13.6 12 5.3 3.2Z"/></svg>
+            Join early access
+          </a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=app.patrascan">Open in Google Play</a>
+        </div>
+        <p class="hero-note">Free · Android 7.0 and newer · About 34 MB. Join as a tester first, then tap Install on Google Play.</p>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>AES-256 encrypted</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12h3m14 0h3M12 2v3m0 14v3"/><circle cx="12" cy="12" r="6"/></svg>Works offline</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l16 16M9.5 4H20v10.5M4 9v11h11"/></svg>No ads, no sign-up</span>
+          <span class="hi">हिंदी + English</span>
+        </div>
+      </div>
 
-<ul>
-  <li>Smart scan with edge detection, filters, crop and rotate</li>
-  <li>Text recognition in Hindi and English, on your phone</li>
-  <li>Mask Aadhaar numbers, sign PDFs, merge, split and compress</li>
-  <li>Encrypted storage, app lock, password-protected backups</li>
-  <li>Optional Google Drive sync, encrypted before upload</li>
-</ul>
+      <div class="stage" aria-label="PatraScan home screen">
+        <div class="phone"><div class="screen"><img src="assets/shots/1_home.webp" alt="PatraScan home screen with Aadhaar, passport photos and marksheet" width="540" height="1121"></div></div>
+        <div class="chip c1"><i style="background:rgba(20,194,161,.16);color:#5eead0">🔒</i><div>Vault locked<small>AES-256-GCM, on device</small></div></div>
+        <div class="chip c2"><i style="background:rgba(59,130,246,.16)">✦</i><div>Edges found<small>Auto perspective fix</small></div></div>
+        <div class="chip c3"><i style="background:rgba(245,158,11,.16)">⬇</i><div>2.4 MB → 186 KB<small>Compressed for upload</small></div></div>
+      </div>
+    </div>
+  </section>
 
-<p><a href="privacy-policy.html">Privacy policy</a> · Contact:
-<a href="mailto:support@techcoderhub.com">support@techcoderhub.com</a></p>
+  <div class="strip" aria-hidden="true">
+    <div class="marquee">
+      <span>Aadhaar</span><span>PAN</span><span>Passport</span><span>Driving licence</span><span>Marksheets</span><span>Passport photos</span><span>Bank KYC</span><span>Exam forms</span><span>Rent agreements</span><span>Invoices</span><span class="hi">आधार</span><span class="hi">मार्कशीट</span>
+      <span>Aadhaar</span><span>PAN</span><span>Passport</span><span>Driving licence</span><span>Marksheets</span><span>Passport photos</span><span>Bank KYC</span><span>Exam forms</span><span>Rent agreements</span><span>Invoices</span><span class="hi">आधार</span><span class="hi">मार्कशीट</span>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From paper to <span class="grad">perfect PDF</span> in four taps.</h2>
+        <p class="lead">Point, check, protect, share. Every step happens on your phone.</p>
+      </div>
+      <div class="flow">
+        <div class="step glass reveal"><div class="num">1</div><h3>Scan or add</h3><p>Smart scan finds the edges and captures on its own. Or pick photos and PDFs already on your phone.</p></div>
+        <div class="step glass reveal"><div class="num">2</div><h3>Enhance</h3><p>Straighten, crop, reorder pages and apply Magic colour, B&amp;W or shadow removal — per page or all at once.</p></div>
+        <div class="step glass reveal"><div class="num">3</div><h3>Protect</h3><p>Saved into an encrypted vault, named and sorted by type and family member. Add a PIN or fingerprint if you like.</p></div>
+        <div class="step glass reveal"><div class="num">4</div><h3>Share right</h3><p>Mask Aadhaar, add a "Only for bank KYC" watermark, sign or compress — preview it — then send.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Features</span>
+        <h2>Everything Indian paperwork asks of you. <span class="grad">Built in.</span></h2>
+        <p class="lead">A scanner, a vault and 20+ PDF tools — designed around the documents you actually carry.</p>
+      </div>
+
+      <div class="bento">
+        <article class="tile glass span-4 feature-big h-teal reveal">
+          <div>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><path d="M4 12h16"/></svg></div>
+            <h3>Smart scan with automatic edge detection</h3>
+            <p>Hold your phone over a document and PatraScan finds the page, captures it and fixes the perspective — even when the photo is tilted. Multi-page scans become one tidy PDF in A4, Letter or fit-to-photo size.</p>
+            <div class="tags"><span>Auto-capture</span><span>Perspective fix</span><span>Crop &amp; rotate</span><span>Reorder pages</span></div>
+          </div>
+          <img src="assets/shots/2_scan.webp" alt="Check pages screen after a scan" loading="lazy" width="540" height="1121">
+        </article>
+
+        <article class="tile glass span-2 h-blue reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.3 1.7-2 3-2s2.4.7 3 2M14 10h4M14 13h3"/></svg></div>
+          <h3>ID card mode</h3>
+          <p>Front and back of a card on one page — exactly like a photocopy, ready to print or upload.</p>
+        </article>
+
+        <article class="tile glass span-2 h-red reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M6 12h7" stroke-width="4"/><path d="M16 12h2"/></svg></div>
+          <h3>Masked Aadhaar</h3>
+          <p>Hide the first 8 digits of your Aadhaar number in one tap, as UIDAI recommends — and see the result before you share.</p>
+        </article>
+
+        <article class="tile glass span-2 h-violet reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div>
+          <h3>Aadhaar QR &amp; barcode reader</h3>
+          <p>Read the Aadhaar Secure QR and any QR or barcode offline — from the camera, a photo or a saved document.</p>
+        </article>
+
+        <article class="tile glass span-2 h-pink reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20 20 4M7 4h13v13"/><path d="M4 9v11h11" opacity=".5"/></svg></div>
+          <h3>“Only for bank KYC” watermark</h3>
+          <p>Stamp who a copy is for and the date across every page, so a photocopy can’t be reused somewhere else.</p>
+        </article>
+
+        <article class="tile glass span-3 h-amber reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14l3 3 3-3M12 10v7"/></svg></div>
+          <h3>Compress to “under 200 KB”</h3>
+          <p>Government and bank portals reject big files. Pick Light, Medium or Strong — or a target like under 500, 200, 100 or 50 KB — and PatraScan gets it there.</p>
+          <div class="tags"><span>Target size</span><span>Merge</span><span>Split</span><span>Password</span><span>JPG</span><span>Word (DOCX)</span></div>
+        </article>
+
+        <article class="tile glass span-3 h-teal reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg></div>
+          <h3>Passport photos &amp; form photos</h3>
+          <p>Make a sheet of 35×45 mm passport photos for 4×6 or A4 printing, or resize a photo (200×230, 20–50 KB) and signature (140×60, 10–20 KB) for exam and government forms.</p>
+        </article>
+
+        <article class="tile glass span-2 h-blue reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+          <h3>Text recognition (OCR)</h3>
+          <p>Copy the text from any page — Hindi and English — read entirely on your phone.</p>
+        </article>
+
+        <article class="tile glass span-2 h-violet reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h3>Find anything</h3>
+          <p>Search by name, type or the words inside a document — <span class="hi">आधार</span>, Aadhaar or even “Aadhar”.</p>
+        </article>
+
+        <article class="tile glass span-2 h-amber reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div>
+          <h3>Family folders &amp; reminders</h3>
+          <p>Keep Papa’s, Maa’s and Riya’s documents apart, and get a reminder before a passport or licence expires.</p>
+        </article>
+
+        <article class="tile glass span-3 h-teal reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Preview before anything leaves</h3>
+          <p>Signed, watermarked, marked-up or masked? A full-screen preview shows every page first. Nothing is shared or saved until you tap Share or Save.</p>
+        </article>
+
+        <article class="tile glass span-3 h-blue reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 18a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 9a4.5 4.5 0 0 1-.5 9H7Z"/><path d="m9 13 2 2 4-4"/></svg></div>
+          <h3>Encrypted Google Drive sync &amp; backup</h3>
+          <p>Optional. Files are encrypted before upload into a hidden folder only PatraScan can see; a recovery key you keep restores them on a new phone. Or save a password-protected backup file.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="tour" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head center reveal" style="text-align:center">
+        <span class="eyebrow">Take the tour</span>
+        <h2>Designed to feel <span class="grad">effortless</span>.</h2>
+      </div>
+    </div>
+    <div class="gallery-wrap">
+      <div class="gallery" tabindex="0" aria-label="App screenshots">
+        <figure class="shot"><div class="frame"><img src="assets/shots/1_home.webp" alt="Home: all your documents" loading="lazy" width="540" height="1121"></div><h3>All your documents</h3><p>Sorted by type and family member</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/5_tools.webp" alt="Tools grid" loading="lazy" width="540" height="1121"></div><h3>20+ free tools</h3><p>Scan, PDF, edit, photos, ID &amp; text</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/2_scan.webp" alt="Check pages after scanning" loading="lazy" width="540" height="1121"></div><h3>Check every page</h3><p>Crop, filter, rotate, retake</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/3_filters.webp" alt="Scan filters" loading="lazy" width="540" height="1121"></div><h3>Crystal-clear scans</h3><p>Magic colour, B&amp;W, grey</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/4_masked.webp" alt="Masked Aadhaar" loading="lazy" width="540" height="1121"></div><h3>Masked Aadhaar</h3><p>First 8 digits hidden</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/6_qr.webp" alt="Aadhaar QR reader" loading="lazy" width="540" height="1121"></div><h3>Read Aadhaar QR</h3><p>Offline, on your phone</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/7_lock.webp" alt="Lock screen" loading="lazy" width="540" height="1121"></div><h3>Locked &amp; private</h3><p>PIN or fingerprint</p></figure>
+        <figure class="shot"><div class="frame"><img src="assets/shots/8_hindi.webp" alt="Tools in Hindi" loading="lazy" width="540" height="1121"></div><h3 class="hi">हिंदी में भी</h3><p>Every screen, both languages</p></figure>
+      </div>
+    </div>
+    <div class="gallery-nav">
+      <button class="round" data-scroll="-1" aria-label="Previous screenshots">←</button>
+      <button class="round" data-scroll="1" aria-label="Next screenshots">→</button>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section id="use-cases">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Use cases</span>
+        <h2>One app for every <span class="grad">“please upload a copy”</span>.</h2>
+        <p class="lead">Real moments where PatraScan saves a trip to the photocopy shop.</p>
+      </div>
+      <div class="cases">
+        <article class="case glass h-blue reveal">
+          <div class="who"><span class="avatar">🎓</span><h3>Students &amp; exam forms</h3></div>
+          <ul>
+            <li>Resize your photo to 200×230 px, 20–50 KB, and signature to 140×60 px, 10–20 KB</li>
+            <li>Scan marksheets and certificates into clean PDFs</li>
+            <li>Compress uploads under the portal limit</li>
+          </ul>
+          <p class="quote">Outcome: files that meet the portal’s size rules first time.</p>
+        </article>
+        <article class="case glass h-teal reveal">
+          <div class="who"><span class="avatar">🏦</span><h3>Bank KYC &amp; new SIM</h3></div>
+          <ul>
+            <li>Masked Aadhaar so your full number isn’t handed out</li>
+            <li>“Only for bank KYC · date” watermark on every page</li>
+            <li>Front and back of PAN or Aadhaar on one page</li>
+          </ul>
+          <p class="quote">Outcome: a copy that only works for the purpose you wrote on it.</p>
+        </article>
+        <article class="case glass h-amber reveal">
+          <div class="who"><span class="avatar">💼</span><h3>Job applications</h3></div>
+          <ul>
+            <li>Merge degree, experience letters and ID into one PDF</li>
+            <li>Sign offer letters right on the page</li>
+            <li>Convert a PDF to Word to edit a form</li>
+          </ul>
+          <p class="quote">Outcome: one signed, ordered PDF instead of ten attachments.</p>
+        </article>
+        <article class="case glass h-pink reveal">
+          <div class="who"><span class="avatar">👨‍👩‍👧</span><h3>Families</h3></div>
+          <ul>
+            <li>Separate folders for Papa, Maa and the kids</li>
+            <li>Reminders before passports and licences expire</li>
+            <li>Find any document by name or the words inside</li>
+          </ul>
+          <p class="quote">Outcome: no more searching WhatsApp for an old photo of a card.</p>
+        </article>
+        <article class="case glass h-violet reveal">
+          <div class="who"><span class="avatar">🏠</span><h3>Renting &amp; property</h3></div>
+          <ul>
+            <li>Scan rent agreements and receipts page by page</li>
+            <li>Hide text for good before sharing with a broker</li>
+            <li>Password-protect a PDF before emailing it</li>
+          </ul>
+          <p class="quote">Outcome: share what’s needed, keep the rest private.</p>
+        </article>
+        <article class="case glass h-red reveal">
+          <div class="who"><span class="avatar">🛫</span><h3>Travel &amp; visas</h3></div>
+          <ul>
+            <li>A sheet of 35×45 mm passport photos to print at any shop</li>
+            <li>Passport, visa and tickets ready offline</li>
+            <li>Read any QR or barcode without internet</li>
+          </ul>
+          <p class="quote">Outcome: a print-ready photo sheet for any photo shop.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Privacy by design</span>
+        <h2>We built it so <span class="grad">we can’t see your documents</span>.</h2>
+        <p class="lead">No server, no account, no analytics. Your files are encrypted on your phone with a key only you control — Drive sync only ever stores it locked with your own recovery key.</p>
+      </div>
+      <div class="vault reveal">
+        <div class="node glass h-teal"><h3>📱 On your phone</h3><p>Every file, preview and name is encrypted with <code>AES-256-GCM</code>. The key lives in Android’s secure storage. OCR, QR, filters and PDF tools all run on-device.</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="node glass h-blue"><h3>☁️ Optional Drive sync</h3><p>Turn it on and files go to a hidden <code>appdata</code> folder in <em>your</em> Google Drive — already encrypted. Google sees sizes and times, never names or contents.</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="node glass h-violet"><h3>🔑 Only you can open it</h3><p>A 32-character recovery key — shown once, kept by you — unlocks your documents on a new phone. Without it, nobody can read them. Not even us.</p></div>
+      </div>
+      <div class="facts">
+        <div class="fact glass reveal"><b class="grad">0</b><span>bytes of your data collected</span></div>
+        <div class="fact glass reveal"><b class="grad">0</b><span>ads, trackers or sign-ups</span></div>
+        <div class="fact glass reveal"><b class="grad">256-bit</b><span>encryption for every file</span></div>
+        <div class="fact glass reveal"><b class="grad">100%</b><span>offline document tools</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare -->
+  <section id="compare" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why PatraScan</span>
+        <h2>Free shouldn’t mean <span class="grad">paying with your privacy</span>.</h2>
+      </div>
+      <div class="glass table-scroll reveal">
+        <table class="compare">
+          <thead><tr><th>What matters</th><th>PatraScan</th><th>Typical free scanner apps</th></tr></thead>
+          <tbody>
+            <tr><td>Ads</td><td><span class="yes">None</span></td><td>Often full-screen ads</td></tr>
+            <tr><td>Account or sign-up</td><td><span class="yes">Not needed</span></td><td>Often required for cloud features</td></tr>
+            <tr><td>Watermark on exported PDFs</td><td><span class="yes">Never — only the one you add</span></td><td>Common on the free tier</td></tr>
+            <tr><td>Text recognition</td><td><span class="yes">On your phone</span></td><td>Often sent to a server</td></tr>
+            <tr><td>Files at rest</td><td><span class="yes">AES-256 encrypted vault</span></td><td>Usually plain files in storage</td></tr>
+            <tr><td>Aadhaar masking, KYC watermark, form photo sizes</td><td><span class="yes">Built in</span></td><td>Rare</td></tr>
+            <tr><td>Hindi interface and search</td><td><span class="yes">Complete</span></td><td>Partial or none</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head center reveal" style="text-align:center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq">
+        <details class="glass reveal"><summary>How do I install PatraScan right now?</summary><p>PatraScan is in early access. Open the <a href="https://play.google.com/apps/testing/app.patrascan">early-access page</a> signed in with your Google account, tap <b>Become a tester</b>, then install it from <a href="https://play.google.com/store/apps/details?id=app.patrascan">Google Play</a>. It can take a few minutes after joining for the Install button to appear. Early access is limited to invited testers for now; public release follows.</p></details>
+        <details class="glass reveal"><summary>Is PatraScan really free?</summary><p>Yes. Every feature is free, with no ads, no in-app purchases and no watermark on your files.</p></details>
+        <details class="glass reveal"><summary>Does it work without internet?</summary><p>Yes. Scanning, filters, text recognition, QR reading, masking and all PDF tools work offline. Internet is only used if you turn on Google Drive sync.</p></details>
+        <details class="glass reveal"><summary>Can TechCoderHub see my documents?</summary><p>No. We don’t run a server and don’t collect any data. Documents are encrypted on your phone; Drive sync uploads them already encrypted to your own Drive. Read the <a href="privacy-policy.html">privacy policy</a>.</p></details>
+        <details class="glass reveal"><summary>What happens if I lose my phone?</summary><p>If Drive sync is on, install PatraScan on the new phone, turn on sync with the same Google account and enter your recovery key — your documents come back. You can also restore from a password-protected backup file.</p></details>
+        <details class="glass reveal"><summary>Is masked Aadhaar accepted?</summary><p>UIDAI recommends sharing masked Aadhaar where the full number isn’t needed. PatraScan hides the first 8 digits and shows you a preview before you share. Some services still ask for the full number — share the original only when you must.</p></details>
+        <details class="glass reveal"><summary>Which phones are supported?</summary><p>Android 7.0 and newer, including tablets and Chromebooks. The app downloads at about 34 MB.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="final glass reveal">
+        <img src="assets/logo.png" alt="" width="84" height="84">
+        <h2>Your documents deserve <span class="grad">better</span>.</h2>
+        <p class="lead center">Scan, protect and share them the right way — free, private and in your language.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://play.google.com/apps/testing/app.patrascan">Join early access</a>
+          <a class="btn btn-ghost" href="docs.html">Read the guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="assets/logo.png" alt="" width="28" height="28">PatraScan</a>
+      <p style="margin:10px 0 0">PDF Scanner &amp; Vault by TechCoderHub · © <span data-year>2026</span></p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="docs.html">User guide</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="https://play.google.com/store/apps/details?id=app.patrascan">Google Play</a>
+      <a href="mailto:support@techcoderhub.com">support@techcoderhub.com</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/site.js?v=3" defer></script>
 </body>
 </html>
